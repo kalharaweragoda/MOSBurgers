@@ -1,0 +1,64 @@
+<div class="container my-5">
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center  mb-4">
+          <h2 class="mb-2 mb-md-0">Products</h2>
+          <div class="d-flex flex-md-row gap-2" style="min-width: 200px; max-width: 400px; width: 100%;">
+            <select
+              class="form-select"
+              [(ngModel)]="selectedOrder"
+              name="employeeId"
+            >
+              <option value="">ORDER BY</option>
+              <option *ngFor="let ord of order" [value]="ord">
+                {{ ord }}
+              </option>
+            </select>
+            <select
+              class="form-select"
+              [(ngModel)]="selectedFilter"
+              name="employeeId"
+              (change)="onFilterChange()"
+            >
+              <option value="">FILTER BY</option>
+              <option *ngFor="let filter of filters" [value]="filter">
+                {{ filter }}
+              </option>
+            </select>
+            
+          </div>
+        </div>
+  
+        <!-- Table section -->
+        <div id="tableData" class="tableData">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity Available</th>
+                <th>Discount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let product of products; let i = index">
+                <tr>
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ product.id }}</td>
+                  <td>{{ product.itemName }}</td>
+                  <td>Rs.{{ product.unitPrice.toFixed(2) }}</td>
+                  <td>{{ product.quantityInStock }}</td>
+                  <td>{{ product.discount }}%</td>
+                  <td><button class="btn btn-warning" (click)="openModal(product)">Update</button></td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

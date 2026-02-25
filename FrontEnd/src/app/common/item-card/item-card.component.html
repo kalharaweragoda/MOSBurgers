@@ -1,0 +1,22 @@
+<div class="card h-100">
+  <div class="parentContainer">
+    <div class="top-left">{{ item.itemCode }}</div>
+    <img class="card-img-top" alt="food" [src]="getImage(item.itemType)"/>
+    <div
+      class="bottom-right discount-text set-padding"
+      *ngIf="item.discount > 0"
+      [attr.discount]="item.discount"
+    >
+      {{ item.discount}}% off
+    </div>
+  </div>
+
+  <div class="card-body text-end">
+    <h5 class="card-title text-center">{{ item.itemName }}</h5>
+    <p class="card-text text-center">Rs.{{ item.unitPrice }}</p>
+    <a class="btn btn-success" (click)="addToCart(item)"
+      ><fa-icon [icon]="faCartShopping"></fa-icon><span>+</span>
+      </a
+    >
+  </div>
+</div>

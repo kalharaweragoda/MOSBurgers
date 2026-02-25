@@ -1,0 +1,12 @@
+.tableData {
+  margin: 0 5%;
+  height: 50vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.tableData thead th{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}

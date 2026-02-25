@@ -1,0 +1,10 @@
+.logo img {
+  width: 50px;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: black;
+}
+
+a.login{
+    cursor: pointer;
+}

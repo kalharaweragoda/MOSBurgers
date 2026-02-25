@@ -1,0 +1,16 @@
+.dropdown select {
+  width: 25%;
+}
+
+@media (max-width: 400px) {
+
+  .dropdown select {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) and (min-width: 400px) {
+  #item-cards {
+    padding: 0 20%;
+  }
+}

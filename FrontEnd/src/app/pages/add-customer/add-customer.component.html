@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Register Customer</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="closeModal()"
+    ></button>
+  </div>
+  <div class="modal-body" style="max-height: 300px; overflow-y: auto">
+    <form>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          autocomplete="off"
+          placeholder="Enter customer name"
+          [(ngModel)]="customer.name"
+          name="customerName"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control"
+          autocomplete="off"
+          placeholder="Enter customer email"
+          [(ngModel)]="customer.email"
+          name="customerEmail"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="tel"
+          class="form-control"
+          autocomplete="off"
+          placeholder="Enter customer phone number"
+          [(ngModel)]="customer.phoneNumber"
+          name="customerPhoneNumber"
+        />
+      </div>
+    </form>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary" (click)="registerCustomer()">Save Customer</button>
+  </div>

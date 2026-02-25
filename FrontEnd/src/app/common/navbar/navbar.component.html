@@ -1,0 +1,43 @@
+<section *ngIf="!isLoaded">
+  <mat-spinner class="loader"></mat-spinner>
+</section>
+<section *ngIf="isLoaded">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand"
+        ><img src="/assets/images/logo-design-1.jpeg" alt="logo"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="navbar-active"
+            [routerLinkActiveOptions]="{exact:true}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/items" routerLinkActive="navbar-active"
+            [routerLinkActiveOptions]="{exact:true}">Items</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" routerLink="/cart" routerLinkActive="navbar-active"
+            [routerLinkActiveOptions]="{exact:true}">Cart</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-dark me-2" routerLink="/login" routerLinkActive="navbar-active"
+            [routerLinkActiveOptions]="{exact:true}">Login</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>

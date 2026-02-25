@@ -1,0 +1,66 @@
+/* bio section */
+.bio img {
+  border-radius: 20%;
+  width: 50%;
+  float: left;
+}
+
+.bio .bio-text {
+  font-family: "Playwrite AU SA", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 35px;
+}
+
+/* Carousel */
+.carousel {
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  height: 25vw;
+  padding-bottom: 25%; /* this sets carousel aspect ratio (4:1 here) */
+}
+
+.carousel-item {
+  position: absolute !important; /* Bootstrap is insistent */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.carousel-item img {
+  height: 100%; /* Bootstrap handles width already */
+  object-fit: cover; /* or 'contain' if you want stretch instead of crop */
+}
+
+.carousel-control-next,
+  .carousel-control-prev /*, .carousel-indicators */ {
+  color: aqua;
+}
+
+/* Feedback section */
+.feedback form {
+  padding: 3%;
+  background-color: #c29201;
+}
+
+.feedback .submit-btn {
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+    .bio {
+      text-align: center;
+    }
+    .bio img {
+      width: 100%;
+    }
+    .carousel-inner {
+      height: 50vw;
+    }
+}

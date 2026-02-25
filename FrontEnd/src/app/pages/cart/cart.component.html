@@ -1,0 +1,64 @@
+<section class="cart" id="cart">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center mb-4">Shopping Cart</h2>
+          <div id="tableData" class="tableData">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity Available</th>
+                  <th>Quantity</th>
+                  <th>Discount</th>
+                  <th>Final Price</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody >
+                <ng-container *ngFor="let item of cartItems; let i = index">
+                  <tr>
+                    <td><img [src]="getImage(item.itemType)" alt="food" class="img-fluid" width="50" /></td>
+                    <td>{{item.itemName}}</td>
+                    <td>Rs.{{item.unitPrice.toFixed(2)}}</td>
+                    <td>{{item.quantityInStock - item.quantity}}</td>
+                    <td><input 
+                      type="number" 
+                      class="form-control quantity-input" 
+                      min="1"
+                      max="{{item.quantityInStock}}"
+                      [(ngModel)]="item.quantity"
+                      (input)="updateFinalPrice(item)"/></td>
+                    <td>{{item.discount}}%</td>
+                    <td>Rs.{{item.finalPrice?.toFixed(2)}}</td>
+                    <td><button 
+                      class="btn btn-danger delete-item" 
+                      (click)="removeItem(i)">Delete</button></td>
+                </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        <div class="text-center">
+          <button 
+          class="btn btn-primary rounded-2 mt-3" 
+          id="checkoutBtn"
+          (click)="openModal()">
+            Proceed to Checkout
+          </button>
+        </div>
+        <div class="text-center">
+          <button 
+          class="btn btn-primary rounded-2 mt-3" 
+          id="registerCustomerBtn"
+          (click)="openCustomerModal()">
+            Register New Customer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

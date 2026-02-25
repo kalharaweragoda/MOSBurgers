@@ -1,0 +1,65 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">{{ item.itemName }}</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modalRef.close()"
+  ></button>
+</div>
+<div class="modal-body" style="max-height: 300px; overflow-y: auto">
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="ItemId"
+      [value]="item.id"
+      disabled
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="ItemType"
+      [value]="item.itemType"
+      disabled
+    />
+  </div>
+  <div class="mb-3">
+    <label for="ItemQuantity" class="m-1">QuantityInStock</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="ItemQuantity"
+      [(ngModel)]="item.quantityInStock"
+      (input)="setQuantityInStock($event)"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="ItemDiscount" class="m-1">ItemDiscount</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="ItemDiscount"
+      [(ngModel)]="item.discount"
+      (input)="setDiscount($event)"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="ItemUnitPrice" class="m-1">ItemUnitPrice</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="ItemUnitPrice"
+      [(ngModel)]="item.unitPrice"
+      (input)="setUnitPrice($event)"
+    />
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Close
+  </button>
+  <button type="button" class="btn btn-primary" (click)="updateProduct()">Save changes</button>
+</div>
