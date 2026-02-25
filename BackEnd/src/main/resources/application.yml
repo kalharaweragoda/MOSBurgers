@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/burger_shop?createDatabaseIfNotExist=true
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret: H_sTPR<Po(d(&6$3gUt(amAO/X?s2)KS2x3WV9ie
+  expiration: 36000000
